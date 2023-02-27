@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_cred_vir2ozz', url: 'https://index.docker.io/v1/')]) {
-                    sh 'docker push vir2ozz/build-image'
+                    sh 'docker push vir2ozz/build-image:latest'
                 }
             }
         }
