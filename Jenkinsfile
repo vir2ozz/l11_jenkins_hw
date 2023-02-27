@@ -5,6 +5,12 @@ pipeline {
             args '-u root'
         }
     }
+    stage('Delete workspace before build starts') {
+            steps {
+                echo 'Deleting workspace'
+                deleteDir()
+        }
+    }   
     stages {
         stage('Build') {
             steps {
