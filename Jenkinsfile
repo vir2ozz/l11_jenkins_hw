@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+                git 'https://github.com/vir2ozz/l11_jenkins_hw.git'
                 sh 'mvn package'
             }
         }
