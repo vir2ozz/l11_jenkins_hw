@@ -9,7 +9,7 @@ pipeline {
         stage('Delete workspace before build starts') {
             steps {
                 echo 'Deleting workspace'
-                deleteDir()
+                sh 'rm -rf l11_jenkins_hw'
             }
         }
         stage('Build') {
