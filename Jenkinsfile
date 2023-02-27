@@ -4,14 +4,14 @@ pipeline {
             image 'vir2ozz/build-image'
             args '-u root'
         }
-    }
-    stage('Delete workspace before build starts') {
+    }   
+    stages {
+        stage('Delete workspace before build starts') {
             steps {
                 echo 'Deleting workspace'
                 deleteDir()
+            }
         }
-    }   
-    stages {
         stage('Build') {
             steps {
                 sh 'git clone https://github.com/vir2ozz/l11_jenkins_hw.git'
