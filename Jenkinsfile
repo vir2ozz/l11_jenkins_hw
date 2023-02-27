@@ -6,12 +6,6 @@ pipeline {
         }
     }   
     stages {
-        stage('Delete workspace before build starts') {
-            steps {
-                echo 'Deleting workspace'
-                sh 'rm -rf l11_jenkins_hw'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'git clone https://github.com/vir2ozz/l11_jenkins_hw.git'
