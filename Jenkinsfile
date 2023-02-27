@@ -21,10 +21,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                withCredentials([usernamePassword(credentialsId: '10874465-2c8d-4045-ad92-c351a50bb30f', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_cred_vir2ozz', url: 'https://index.docker.io/v1/')]) {
+                    sh 'docker push vir2ozz/build-image'
                 }
-                sh 'docker push vir2ozz/hello-app'
             }
         }
     }
